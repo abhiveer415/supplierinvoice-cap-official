@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^9.9.1",
     "jest": "^30.4.1"
   },
   "scripts": {
