@@ -1,0 +1,36 @@
+_schema-version: "3.1"
+ID: supplierinvoice-cap
+version: 1.0.0
+
+modules:
+  - name: supplierinvoice-cap-srv
+    type: nodejs
+    path: .
+    parameters:
+      memory: 512M
+    build-parameters:
+      builder: npm
+    requires:
+      - name: supplierinvoice-cap-destination
+      - name: supplierinvoice-cap-connectivity
+      - name: supplierinvoice-cap-xsuaa
+
+resources:
+  - name: supplierinvoice-cap-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+
+  - name: supplierinvoice-cap-connectivity
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-plan: lite
+
+  - name: supplierinvoice-cap-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json

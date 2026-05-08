@@ -1,0 +1,54 @@
+# =========================
+# CAP / Node.js
+# =========================
+node_modules/
+gen/
+_out/
+*.db
+*.sqlite
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+default-env.json
+default-*.json
+.cdsrc-private.json
+connection.properties
+
+# =========================
+# MTA / Build Artifacts
+# =========================
+*_mta_build_tmp
+*.mtar
+mta_archives/
+mta-op*/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+.che/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+
+# =========================
+# Java / Misc (from BAS templates)
+# =========================
+target/
+*.iml
+*.flattened-pom.xml
+
+# =========================
+# CAP Model Generator
+# =========================
+@cds-models

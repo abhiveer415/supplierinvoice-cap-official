@@ -1,0 +1,41 @@
+{
+  "name": "supplierinvoice-cap",
+  "version": "1.0.0",
+  "description": "SAP CAP app for Supplier Invoice API",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/cds-types": "^0.10.0",
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3.26.4",
+    "@sap-cloud-sdk/resilience": "^3",
+    "@sap/cds": "^8",
+    "@sap/xssec": "^4",
+    "express": "^4",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "auth": "xsuaa",
+      "supplierinvoiceprocess": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_SUPPLIERINVOICE_PROCESS_SRV",
+        "service": "API_SUPPLIERINVOICE_PROCESS_SRV",
+        "csrf": true,
+        "csrfInBatch": true,
+        "credentials": {
+          "destination": "HMF_2023",
+          "path": "/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV",
+          "locationId": "MYGO-BTP-BAS"
+        }
+      }
+    }
+  }
+}
