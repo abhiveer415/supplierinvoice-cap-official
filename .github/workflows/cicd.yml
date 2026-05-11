@@ -58,3 +58,7 @@ jobs:
 
       - name: Deploy MTAR to DEV
         run: cf deploy mta_archives/*.mtar -f
+
+      - name: Smoke Test
+        run: |
+          curl --fail https://mygo-consulting-inc-mygo-bas-4e8bz4sk-mygo-bas-supplier3f0d8e67.cfapps.us10-001.hana.ondemand.com/health
