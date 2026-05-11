@@ -31,10 +31,8 @@ jobs:
       - name: CAP Build
         run: npx cds build
 
-      - name: Setup MBT
-        uses: SAP/project-piper-action@master
-        with:
-          command: setupMtaBuildTool
+      - name: Install MBT
+        run: npm install -g mbt
 
       - name: Build MTAR
         run: mbt build
