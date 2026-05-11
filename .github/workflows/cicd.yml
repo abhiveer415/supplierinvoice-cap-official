@@ -30,3 +30,6 @@ jobs:
 
       - name: CAP Build
         run: npx cds build
+
+      - name: Build MTAR
+        run: npx mbt build
